@@ -36,7 +36,7 @@ public class RedBlock : MonoBehaviour
 			if (isOn)
 			{
 				col1.enabled = true;
-				col2.enabled = true;
+				col2.enabled = false;
 				spriteR.sprite = OnSprite;
 				spriteR.color = Color.white;
 				setOn = true;
@@ -49,7 +49,7 @@ public class RedBlock : MonoBehaviour
 			if (!isOn)
 			{
 				col1.enabled = false;
-				col2.enabled = false;
+				col2.enabled = true;
 				spriteR.sprite = OffSprite;
 				//spriteR.color = semiVisible;
 				setOff = true;
