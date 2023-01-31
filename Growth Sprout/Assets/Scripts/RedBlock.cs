@@ -6,7 +6,8 @@ public class RedBlock : MonoBehaviour
 {
 
 	private bool isOn;
-	private BoxCollider2D col;
+	public BoxCollider2D col1;
+	public BoxCollider2D col2;
 	private SpriteRenderer spriteR;
 	public SwitchController SwitchController;
 	public Sprite OnSprite;
@@ -18,7 +19,7 @@ public class RedBlock : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		col = GetComponent<BoxCollider2D>();
+		//col = GetComponent<BoxCollider2D>();
 		spriteR = GetComponent<SpriteRenderer>();
 		//semiVisible = new Color(1, 1, 1, 0.5f);
 		setOn = true;
@@ -34,7 +35,8 @@ public class RedBlock : MonoBehaviour
 		{
 			if (isOn)
 			{
-				col.enabled = true;
+				col1.enabled = true;
+				col2.enabled = true;
 				spriteR.sprite = OnSprite;
 				spriteR.color = Color.white;
 				setOn = true;
@@ -46,7 +48,8 @@ public class RedBlock : MonoBehaviour
 		{
 			if (!isOn)
 			{
-				col.enabled = false;
+				col1.enabled = false;
+				col2.enabled = false;
 				spriteR.sprite = OffSprite;
 				//spriteR.color = semiVisible;
 				setOff = true;

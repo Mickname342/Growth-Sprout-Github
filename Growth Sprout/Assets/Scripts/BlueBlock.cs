@@ -6,7 +6,8 @@ public class BlueBlock : MonoBehaviour
 {
 
 	private bool isOn;
-	private Collider2D col;
+	public Collider2D col1;
+	public Collider2D col2;
 	private SpriteRenderer spriteR;
 	public Sprite OnSprite;
 	public Sprite OffSprite;
@@ -17,7 +18,7 @@ public class BlueBlock : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		col = GetComponent<Collider2D>();
+		//col = GetComponent<Collider2D>();
 		spriteR = GetComponent<SpriteRenderer>();
 		semiVisible = new Color(1, 1, 1, 0.5f);
 		setOn = false;
@@ -33,7 +34,8 @@ public class BlueBlock : MonoBehaviour
 		{
 			if (!isOn)
 			{
-				col.enabled = true;
+				col1.enabled = true;
+				col2.enabled = true;
 				spriteR.sprite = OnSprite;
 				spriteR.color = Color.white;
 				setOn = true;
@@ -45,7 +47,8 @@ public class BlueBlock : MonoBehaviour
 		{
 			if (isOn)
 			{
-				col.enabled = false;
+				col1.enabled = false;
+				col2.enabled = false;
 				spriteR.sprite = OffSprite;
 				spriteR.color = semiVisible;
 				setOff = true;
