@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public Animator animator;
+
     public bool spriting = false;
 
     public float maxDistance;
     public float Velocity = 10f;
+    float horizontalMove = 0f;
+    float verticalMove = 0f;
 
     public Vector3 boxSize;
 
@@ -18,13 +22,19 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        spriting = true;
+        animator = GetComponent<Animator>();
 
         rb2d = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
+        horizontalMove = Input.GetAxisRaw("Horizontal") * Velocity;
+        verticalMove = Input.GetAxisRaw("Vertical") * Velocity;
+
+        animator.SetFloat("Horizontal Speed", Mathf.Abs(horizontalMove));
+        animator.SetFloat("Vertical Speed", Mathf.Abs(verticalMove));
+
         HandleMovement();
     }
 
@@ -35,6 +45,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && GroundCheck())
             {
                 rb2d.AddForce(transform.up * Velocity* 1.2f, ForceMode2D.Impulse);
+                animator.SetBool("IsJumping", true);
             }
         }
         
