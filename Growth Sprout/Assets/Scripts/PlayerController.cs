@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) && GroundCheck())
             {
-                rb2d.AddForce(transform.up * Velocity, ForceMode2D.Impulse);
+                rb2d.AddForce(transform.up * Velocity* 1.5f, ForceMode2D.Impulse);
             }
         }
         

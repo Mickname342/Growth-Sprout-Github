@@ -24,7 +24,7 @@ public class SwitchController : MonoBehaviour
 
     private void Update()
     {
-		if (Input.GetKeyDown(KeyCode.UpArrow) && (Time.time > timeLastShot + delayBetweenShots))
+		if (Input.GetKeyDown(KeyCode.Return) && (Time.time > timeLastShot + delayBetweenShots))
         {
 			timeLastShot = Time.time;
 			isOn = !isOn;
