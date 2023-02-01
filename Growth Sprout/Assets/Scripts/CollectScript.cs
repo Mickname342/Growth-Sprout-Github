@@ -14,16 +14,20 @@ public class CollectScript : MonoBehaviour
     public Transform Player;
     public bool collectable = false;
     public bool collected = false;
+    public float offset = 0.5f;
+    public bool picked = false;
 
     private void Update()
     {
         if (collected == true)
         {
-            seed.position = Player.position + new Vector3(0,0.5f,0);
+            seed.position = Player.position + new Vector3(0,offset,0);
         }
         if (collected == true && Input.GetKey(KeyCode.DownArrow))
         {
             collected = false;
+            //picked = false;
+            //Change.Invoke();
         }
         if (collected == false)
         {
@@ -32,24 +36,20 @@ public class CollectScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collectable == true && collision.CompareTag("Player"))
+        if (collectable == true && collision.CompareTag("Player") && !picked)
         {
             NotChange.Invoke();
             collected = true;
-            print(collision.gameObject);
-        }
-        if (collision.CompareTag("Pot"))
-        {
-            InsidePot.Invoke();
-            print(collision.gameObject);
+            //picked = true;
         }
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
+    public void AlreadyPicked()
     {
-        if (collision.CompareTag("Pot"))
-        {
-            OutsidePot.Invoke();
-        }
+        picked = true;
+    }
+
+    public void FreeToPick()
+    {
+        picked = false;
     }
 }
