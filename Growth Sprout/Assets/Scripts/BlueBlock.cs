@@ -11,6 +11,7 @@ public class BlueBlock : MonoBehaviour
 	private SpriteRenderer spriteR;
 	public Sprite OnSprite;
 	public Sprite OffSprite;
+	public SpriteRenderer Seed;
 	private Color semiVisible;
 	private bool setOn;
 	private bool setOff;
@@ -36,6 +37,7 @@ public class BlueBlock : MonoBehaviour
 			{
 				col1.enabled = true;
 				col2.enabled = false;
+				Seed.enabled = false;
 				spriteR.sprite = OnSprite;
 				spriteR.color = Color.white;
 				setOn = true;
@@ -50,7 +52,8 @@ public class BlueBlock : MonoBehaviour
 				col1.enabled = false;
 				col2.enabled = true;
 				spriteR.sprite = OffSprite;
-				spriteR.color = semiVisible;
+				Seed.enabled = true;
+				//spriteR.color = semiVisible;
 				setOff = true;
 				setOn = false;
 			}

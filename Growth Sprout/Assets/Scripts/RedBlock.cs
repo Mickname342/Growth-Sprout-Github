@@ -51,7 +51,7 @@ public class RedBlock : MonoBehaviour
 				col1.enabled = false;
 				col2.enabled = true;
 				spriteR.sprite = OffSprite;
-				//spriteR.color = semiVisible;
+				//spriteR.color = Color.white;
 				setOff = true;
 				setOn = false;
 			}
