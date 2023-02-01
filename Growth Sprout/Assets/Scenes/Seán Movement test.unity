@@ -403,6 +403,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom
       objectReference: {fileID: 0}
+    - target: {fileID: 7190549384136479749, guid: 4aa02987c56676b44bb03f15a44f9ce7, type: 3}
+      propertyPath: seed
+      value: 
+      objectReference: {fileID: 2055281712}
+    - target: {fileID: 7190549384136479749, guid: 4aa02987c56676b44bb03f15a44f9ce7, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 2048131526}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aa02987c56676b44bb03f15a44f9ce7, type: 3}
 --- !u!1 &1300665963
@@ -770,3 +778,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2048131523}
+--- !u!4 &2055281712 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1646518318847025584, guid: 4aa02987c56676b44bb03f15a44f9ce7, type: 3}
+  m_PrefabInstance: {fileID: 1260692444}
+  m_PrefabAsset: {fileID: 0}
