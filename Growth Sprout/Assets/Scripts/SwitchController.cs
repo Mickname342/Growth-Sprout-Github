@@ -5,8 +5,7 @@ using UnityEngine;
 public class SwitchController : MonoBehaviour
 {
 	public static SwitchController instance = null;
-	public bool isOn;
-	public bool powerup = false;
+	public bool isOn = false;
 	float timeLastShot = 0f;
 	float delayBetweenShots = 1f;
 
@@ -28,26 +27,8 @@ public class SwitchController : MonoBehaviour
         {
 			timeLastShot = Time.time;
 			isOn = !isOn;
-
+			return;
 		}
     }
 
-    public void FlipSwitch()
-	{
-		isOn = !isOn;
-	}
-
-	public void TurnTrue()
-    {
-		powerup = true;
-    }
-
-	public void FlipSwitch2()
-	{
-		if(powerup == true)
-        {
-			isOn = !isOn;
-		}
-		
-	}
 }

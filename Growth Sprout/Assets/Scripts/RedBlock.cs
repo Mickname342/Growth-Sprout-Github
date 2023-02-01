@@ -15,6 +15,7 @@ public class RedBlock : MonoBehaviour
 	//private Color semiVisible;
 	private bool setOn;
 	private bool setOff;
+	public bool switchable;
 
 	// Use this for initialization
 	void Start()
@@ -31,7 +32,7 @@ public class RedBlock : MonoBehaviour
 	{
 		isOn = SwitchController.instance.isOn;
 
-		if (!setOn)
+		if (!setOn && switchable)
 		{
 			if (isOn)
 			{
@@ -44,7 +45,7 @@ public class RedBlock : MonoBehaviour
 			}
 
 		}
-		if (!setOff)
+		if (!setOff && switchable)
 		{
 			if (!isOn)
 			{

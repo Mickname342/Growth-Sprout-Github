@@ -15,6 +15,7 @@ public class BlueBlock : MonoBehaviour
 	private Color semiVisible;
 	private bool setOn;
 	private bool setOff;
+	private bool switchable = true;
 
 	// Use this for initialization
 	void Start()
@@ -31,9 +32,20 @@ public class BlueBlock : MonoBehaviour
 	{
 		isOn = SwitchController.instance.isOn;
 
+		if (!switchable)
+        {
+			col1.enabled = false;
+			col2.enabled = true;
+			spriteR.sprite = OffSprite;
+			Seed.enabled = true;
+			//spriteR.color = semiVisible;
+			setOff = true;
+			setOn = false;
+		}
+
 		if (!setOn)
 		{
-			if (!isOn)
+			if (!isOn && switchable)
 			{
 				col1.enabled = true;
 				col2.enabled = false;
@@ -47,7 +59,7 @@ public class BlueBlock : MonoBehaviour
 		}
 		if (!setOff)
 		{
-			if (isOn)
+			if (isOn && switchable)
 			{
 				col1.enabled = false;
 				col2.enabled = true;
@@ -58,5 +70,16 @@ public class BlueBlock : MonoBehaviour
 				setOn = false;
 			}
 		}
+	}
+
+	public void NotAbleToSwitch()
+    {
+		switchable = false;
+    }
+
+	public void AbleToSwitch()
+	{
+		switchable = true;
+		isOn = false;
 	}
 }

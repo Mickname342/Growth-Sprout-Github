@@ -365,7 +365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1646518318847025584, guid: 4aa02987c56676b44bb03f15a44f9ce7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: -2.93
       objectReference: {fileID: 0}
     - target: {fileID: 1646518318847025584, guid: 4aa02987c56676b44bb03f15a44f9ce7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -403,6 +403,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom
       objectReference: {fileID: 0}
+    - target: {fileID: 1646518318847025589, guid: 4aa02987c56676b44bb03f15a44f9ce7, type: 3}
+      propertyPath: switchable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7190549384136479749, guid: 4aa02987c56676b44bb03f15a44f9ce7, type: 3}
       propertyPath: seed
       value: 
@@ -411,6 +415,26 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 2048131526}
+    - target: {fileID: 7190549384136479749, guid: 4aa02987c56676b44bb03f15a44f9ce7, type: 3}
+      propertyPath: collectable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190549384136479749, guid: 4aa02987c56676b44bb03f15a44f9ce7, type: 3}
+      propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190549384136479749, guid: 4aa02987c56676b44bb03f15a44f9ce7, type: 3}
+      propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2055281715}
+    - target: {fileID: 7190549384136479749, guid: 4aa02987c56676b44bb03f15a44f9ce7, type: 3}
+      propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NotAbleToSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190549384136479749, guid: 4aa02987c56676b44bb03f15a44f9ce7, type: 3}
+      propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BlueBlock, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aa02987c56676b44bb03f15a44f9ce7, type: 3}
 --- !u!1 &1300665963
@@ -644,7 +668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e500faacbe6bf94eadc3618532e5603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriting: 0
+  animator: {fileID: 0}
+  spriting: 1
   maxDistance: 0.7
   Velocity: 10
   boxSize: {x: 1.01, y: 0.1, z: 0}
@@ -783,3 +808,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1646518318847025584, guid: 4aa02987c56676b44bb03f15a44f9ce7, type: 3}
   m_PrefabInstance: {fileID: 1260692444}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2055281715 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1646518318847025589, guid: 4aa02987c56676b44bb03f15a44f9ce7, type: 3}
+  m_PrefabInstance: {fileID: 1260692444}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883d8fef2e9ea6c42bd8f9c2ca666e68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

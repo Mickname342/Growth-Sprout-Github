@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
 
         rb2d = GetComponent<Rigidbody2D>();
     }
@@ -32,8 +32,8 @@ public class PlayerController : MonoBehaviour
         horizontalMove = Input.GetAxisRaw("Horizontal") * Velocity;
         verticalMove = Input.GetAxisRaw("Vertical") * Velocity;
 
-        animator.SetFloat("Horizontal Speed", Mathf.Abs(horizontalMove));
-        animator.SetFloat("Vertical Speed", Mathf.Abs(verticalMove));
+        //animator.SetFloat("Horizontal Speed", Mathf.Abs(horizontalMove));
+        //animator.SetFloat("Vertical Speed", Mathf.Abs(verticalMove));
 
         HandleMovement();
     }
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && GroundCheck())
             {
                 rb2d.AddForce(transform.up * Velocity* 1.2f, ForceMode2D.Impulse);
-                animator.SetBool("IsJumping", true);
+                //animator.SetBool("IsJumping", true);
             }
         }
         
@@ -74,14 +74,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             return false;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Bramble"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
