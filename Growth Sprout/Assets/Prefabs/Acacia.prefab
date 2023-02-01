@@ -121,9 +121,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3440892030930631960}
   - component: {fileID: 3440892030930631963}
-  - component: {fileID: 3440892030930631962}
   - component: {fileID: 3440892030930631957}
-  m_Layer: 0
+  - component: {fileID: 3680934910537776609}
+  m_Layer: 6
   m_Name: Acacia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,22 +198,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &3440892030930631962
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3440892030930631956}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.2}
-  m_Size: {x: 4, y: 1}
-  m_Direction: 1
 --- !u!114 &3440892030930631957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,8 +210,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 883d8fef2e9ea6c42bd8f9c2ca666e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  col1: {fileID: 3440892030930631962}
+  col1: {fileID: 3680934910537776609}
   col2: {fileID: 3440892029753867355}
   OnSprite: {fileID: 21300000, guid: d64bfb80e1098444c82253f7113ee647, type: 3}
   OffSprite: {fileID: 0}
   Seed: {fileID: 3440892029753867353}
+--- !u!61 &3680934910537776609
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3440892030930631956}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 1.2}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5, y: 5}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 1}
+  m_EdgeRadius: 0
