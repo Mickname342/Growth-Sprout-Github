@@ -186,8 +186,12 @@ MonoBehaviour:
         m_CallState: 2
   seed: {fileID: 1646518318847025584}
   Player: {fileID: 0}
+  PlayerTagger: {fileID: 0}
   collectable: 0
   collected: 0
+  offset: 0
+  past: 1
+  droppedThisFrame: 0
 --- !u!1 &1646518318847025588
 GameObject:
   m_ObjectHideFlags: 0

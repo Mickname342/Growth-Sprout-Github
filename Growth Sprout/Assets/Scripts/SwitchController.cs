@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SwitchController : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class SwitchController : MonoBehaviour
 	public bool isOn = false;
 	float timeLastShot = 0f;
 	float delayBetweenShots = 1f;
+	public UnityEvent past;
+	public UnityEvent future;
 
 	void Awake()
 	{
@@ -23,12 +26,25 @@ public class SwitchController : MonoBehaviour
 
     private void Update()
     {
-		if (Input.GetKeyDown(KeyCode.Return) && (Time.time > timeLastShot + delayBetweenShots))
+		if (Time.time > timeLastShot + delayBetweenShots)
         {
-			timeLastShot = Time.time;
-			isOn = !isOn;
-			return;
+			if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift))
+            {
+				timeLastShot = Time.time;
+				isOn = !isOn;
+				past.Invoke();
+				return;
+			}
+			
 		}
+		if (isOn)
+        {
+			
+        }
+		if (!isOn)
+        {
+			future.Invoke();
+        }
     }
 
 }

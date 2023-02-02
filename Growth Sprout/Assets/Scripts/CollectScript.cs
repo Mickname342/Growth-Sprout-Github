@@ -16,7 +16,7 @@ public class CollectScript : MonoBehaviour
     public bool collectable = false;
     public bool collected = false;
     public float offset = 0.5f;
-    public bool picked = false;
+    public bool past = true;
     public bool droppedThisFrame = false;
 
     private void Update()
@@ -28,7 +28,16 @@ public class CollectScript : MonoBehaviour
         if (collected == true && Input.GetKey(KeyCode.DownArrow))
         {
             collected = false;
+            droppedThisFrame = true;
+        }
+        if (collected == false && droppedThisFrame)
+        {
+            if (past)
+            {
+                OutsidePot.Invoke();
+            }
             Change.Invoke();
+            droppedThisFrame = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,6 +46,12 @@ public class CollectScript : MonoBehaviour
         {
             NotChange.Invoke();
             collected = true;
+            InsidePot.Invoke();
         }
+    }
+
+    public void ChangeTime()
+    {
+        past = !past;
     }
 }

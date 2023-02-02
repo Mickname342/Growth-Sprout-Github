@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) && GroundCheck())
             {
-                rb2d.AddForce(transform.up * Velocity* 1.2f, ForceMode2D.Impulse);
+                rb2d.AddForce(transform.up * Velocity* 1.6f, ForceMode2D.Impulse);
                 //animator.SetBool("IsJumping", true);
             }
         }

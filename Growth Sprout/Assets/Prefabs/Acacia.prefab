@@ -162,9 +162,12 @@ MonoBehaviour:
       m_Calls: []
   seed: {fileID: 3440892030930631960}
   Player: {fileID: 0}
+  PlayerTagger: {fileID: 0}
   collectable: 1
   collected: 0
-  offset: 2
+  offset: 0
+  past: 1
+  droppedThisFrame: 0
 --- !u!1 &3440892030930631956
 GameObject:
   m_ObjectHideFlags: 0
